@@ -1,0 +1,7 @@
+{
+  "generator-react-webpack": {
+    "appName": "pig",
+    "style": "scss",
+    "postcss": false
+  }
+}
