@@ -1,35 +1,33 @@
 {
-  "parser": "babel-eslint",
-  "plugins": [
-    "react"
+  "parser"  : "babel-eslint",
+  "extends" : [
+    "airbnb"
   ],
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
+  "env"     : {
+    "browser" : true
   },
-  "env": {
-    "browser": true,
-    "amd": true,
-    "es6": true,
-    "node": true,
-    "mocha": true
+  "globals": {
+    "Action": false,
+    "DEVELOPMENT": false,
+    "PRODUCTION": false,
+    "__DEBUG__": false,
+    "sinon": false,
+    "expect": false,
+    "assert": false,
+    "it": false,
+    "describe": false,
+    "before": false,
+    "after": false,
+    "beforeEach": false,
+    "afterEach": false
   },
   "rules": {
-    "comma-dangle": 1,
-    "quotes": [ 1, "single" ],
-    "no-undef": 1,
-    "global-strict": 0,
-    "no-extra-semi": 1,
-    "no-underscore-dangle": 0,
-    "no-console": 1,
-    "no-unused-vars": 1,
-    "no-trailing-spaces": [1, { "skipBlankLines": true }],
-    "no-unreachable": 1,
-    "no-alert": 0,
-    "react/jsx-uses-react": 1,
-    "react/jsx-uses-vars": 1
+    "semi" : [2, "never"],
+    "max-len": [2, 140, 2],
+    "arrow-body-style": [0, "as-needed"],
+    "no-use-before-define": 0,
+    "new-cap": 0,
+    "react/prefer-stateless-function": 0,
+    "no-case-declarations": 0
   }
 }

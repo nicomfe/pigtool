@@ -1,0 +1,67 @@
+[
+  {
+    "id": "9AB631A1-9089-4815-A77D-6F705F7DA2A8",
+    "tag_number": "1234",
+    "date": "Mon Apr 09 2016 10:48:28 GMT+1200 (NZST)",
+    "origin": "Externo",
+    "purchased_price": "300",
+    "birth_date": "Mon Apr 09 2007 10:48:28 GMT+1200 (NZST)",
+    "mounting_dates": ["Mon Apr 20 2016 10:48:28 GMT+1200 (NZST)"],
+    "farrowings": [
+      {
+        "date": "Mon Apr 09 2016 10:48:28 GMT+1200 (NZST)",
+        "piglets_born_alive": 8,
+        "piglets_born_dead": 3
+      }
+    ]
+  },
+  {
+    "id": "9BB631A1-9089-4815-A77D-6F705F7DA2A8",
+    "tag_number": "1235",
+    "origin": "Externo",
+    "purchased_price": "300.50",
+    "date": "Mon Apr 09 2016 10:48:28 GMT+1200 (NZST)",
+    "birth_date": "Mon Apr 09 2007 10:48:28 GMT+1200 (NZST)",
+    "mounting_dates": ["Mon Apr 21 2016 10:48:28 GMT+1200 (NZST)"],
+    "farrowings": [
+      {
+        "date": "Mon Apr 11 2016 10:48:28 GMT+1200 (NZST)",
+        "piglets_born_alive": 8,
+        "piglets_born_dead": 3
+      }
+    ]
+  },
+  {
+    "id": "9CB631A1-9089-4815-A77D-6F705F7DA2A8",
+    "tag_number": "1236",
+    "origin": "Propio",
+    "purchased_price": "300",
+    "date": "Mon Apr 09 2016 10:48:28 GMT+1200 (NZST)",
+    "birth_date": "Mon Apr 09 2007 10:48:28 GMT+1200 (NZST)",
+    "mounting_dates": ["Mon Apr 19 2016 10:48:28 GMT+1200 (NZST)"],
+    "farrowings": [
+      {
+        "date": "Mon Apr 04 2016 10:48:28 GMT+1200 (NZST)",
+        "piglets_born_alive": 8,
+        "piglets_born_dead": 3
+      }
+    ]
+  },
+  {
+    "id": "9DB631A1-9089-4815-A77D-6F705F7DA2A8",
+    "tag_number": "1237",
+    "origin": "Propio",
+    "purchased_price": "300",
+
+    "date": "Mon Apr 09 2016 10:48:28 GMT+1200 (NZST)",
+    "birth_date": "Mon Apr 09 2007 10:48:28 GMT+1200 (NZST)",
+    "mounting_dates": ["Mon Apr 18 2016 10:48:28 GMT+1200 (NZST)"],
+    "farrowings": [
+      {
+        "date": "Mon Apr 01 2016 10:48:28 GMT+1200 (NZST)",
+        "piglets_born_alive": 8,
+        "piglets_born_dead": 3
+      }
+    ]
+  }
+]
