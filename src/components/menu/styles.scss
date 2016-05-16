@@ -1,8 +1,30 @@
 .topMenu {
   height: 50px;
+  > div {
+    width: 100%;
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
 }
 
-.leftMenuContent{
-  padding-top: 60px;
-  padding-left: 25px;
+.profileMenu {
+  a {
+    color: white;
+    text-decoration: none;
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}
+
+.menuButton{
+  min-width: auto;
+  color: white !important;
+  &:hover, &:focus{
+    color: $color-accent !important;
+    background: none !important;
+  }
 }

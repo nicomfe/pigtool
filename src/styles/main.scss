@@ -1,0 +1,13 @@
+@import "./react-toolbox-theme";
+
+$screen-sm-min: 769px;
+$color-disabled: #eee;
+$font-size-normal: 1.2rem;
+
+body {
+  font-size: $font-size-normal;
+}
+
+input {
+  font-size: $font-size-normal;
+}

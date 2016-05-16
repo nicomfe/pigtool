@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import { logout as logoutAction } from '../../stores/auth'
 import TopMenu from '../../components/menu/TopMenu'
 import LeftMenu from '../../components/menu/LeftMenu'
+import ProfileMenu from '../../components/menu/ProfileMenu'
+import Title from '../../components/menu/Title'
 
 class MenuContainer extends React.Component {
 
@@ -14,8 +16,12 @@ class MenuContainer extends React.Component {
   render() {
     return (
       <div>
-        <TopMenu handleLogout={this.handleLogout}>
-          <LeftMenu />
+        <TopMenu>
+          <div>
+            <LeftMenu />
+            <Title />
+            <ProfileMenu handleLogout={this.handleLogout} />
+          </div>
         </TopMenu>
       </div>
     )
@@ -31,7 +37,7 @@ const mapStateToProps = () => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  logout: () => {dispatch(logoutAction())},
+  logout: () => { dispatch(logoutAction()) },
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MenuContainer)

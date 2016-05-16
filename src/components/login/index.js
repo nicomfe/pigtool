@@ -9,14 +9,16 @@ const Login = (props) => {
   return (
     <div className={css.loginForm}>
       <div>
-        <Input type="text"
+        <Input
+          type="text"
           name="email"
           label="Email"
           icon="person"
           value={email}
           onChange={handleChange}
         />
-        <Input type="password"
+        <Input
+          type="password"
           name="password"
           label="Password"
           icon="lock"

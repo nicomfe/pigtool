@@ -1,4 +1,5 @@
 import React from 'react'
+import Input from 'react-toolbox/lib/input'
 
 class SearchBar extends React.Component {
 
@@ -6,19 +7,19 @@ class SearchBar extends React.Component {
     event.preventDefault()
   }
 
-  handleChange = () => {
+  handleChange = (value) => {
     const { onChange } = this.props
-    onChange(this.refs.searchInput.value)
+    onChange(value)
   }
 
   render() {
     const { filterText = '' } = this.props
     return (
       <form onSubmit={this.handleSubmit} >
-        <input
-          ref="searchInput"
+        <Input
           type="text"
-          placeholder="Buscar..."
+          label="Buscar"
+          icon="search"
           onChange={this.handleChange}
           value={filterText}
         />

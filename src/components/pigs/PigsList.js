@@ -3,13 +3,14 @@ import ImmutablePropTypes from 'react-immutable-proptypes'
 import List from 'react-toolbox/lib/list/List'
 
 import PigRow from './PigRow'
+import css from './styles.scss'
 
 class PigsList extends React.Component {
 
   render() {
     const { pigs, filterText } = this.props
     return (
-      <List selectable ripple>
+      <List className={css.pigsList} selectable ripple>
         {pigs.valueSeq()
           .filter((pig) => filterText === '' || pig.get('tagNumber').startsWith(filterText))
           .map((pig) =>

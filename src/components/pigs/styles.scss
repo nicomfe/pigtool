@@ -1,6 +1,21 @@
+@import "../../styles/main";
+
 .pigsPage {
-  display: flex;
+  @media (min-width: $screen-sm-min ) {
+    display: flex;
+    > div + div {
+      margin-left: 50px;
+      padding-left: 50px;
+      border-left: 1px solid $color-disabled;
+    }
+  }
   justify-content: space-between;
+}
+
+.button{
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .pigsForm {
@@ -9,16 +24,17 @@
 
 .pigsList {
   width: 100%;
+  margin-top:0.1rem;
 }
 
 .showItemContent {
   height: 50px;
-  transition: all 0.5s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .hideItemContent {
   height: 0px;
-  transition: all 0.5s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .pigRow{
@@ -34,4 +50,14 @@
   div{
     background-color: transparent;
   }
+}
+
+.button {
+  &:hover {
+    background-color: $color-primary-light !important;
+  }
+}
+
+input, label, button {
+  font-size: inherit !important;
 }

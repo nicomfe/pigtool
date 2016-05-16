@@ -35,7 +35,7 @@ const mapStateToProps = () => ({
 
 })
 const mapDispatchToProps = (dispatch) => ({
-  login: (creds) => {dispatch(requestLogin(creds))},
+  login: (creds) => { dispatch(requestLogin(creds)) },
 })
 
 LoginContainer.propTypes = {

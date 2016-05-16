@@ -4,6 +4,8 @@ import Input from 'react-toolbox/lib/input'
 import DatePicker from 'react-toolbox/lib/date_picker'
 import Button from 'react-toolbox/lib/button'
 
+import css from './styles.scss'
+
 class PigForm extends React.Component {
 
   componentWillMount() {
@@ -26,19 +28,27 @@ class PigForm extends React.Component {
     return (
       <form onSubmit={handleSubmit}>
         <div>
-          <DatePicker label="Ingreso" {...date} />
+          <DatePicker className={css.input} label="Ingreso" {...date} />
         </div>
         <div>
-          <Input type="text" label="Caravana" {...tagNumber} />
+          <Input className={css.input} type="text" label="Caravana" {...tagNumber} />
         </div>
         <div>
-          <Input type="text" label="Precio" {...purchasedPrice} />
+          <Input className={css.input} type="text" label="Precio" {...purchasedPrice} />
         </div>
         <div>
-          <DatePicker label="Fecha de Nacimiento" {...birthDate} />
+          <DatePicker className={css.input} label="Fecha de Nacimiento" {...birthDate} />
         </div>
         <div>
-          <Button type="submit" raised primary onClick={handleSubmit}>Guardar</Button>
+          <Button
+            type="submit"
+            raised
+            primary
+            onClick={handleSubmit}
+            className={css.button}
+          >
+            Guardar
+          </Button>
         </div>
       </form>
     )
