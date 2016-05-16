@@ -23,12 +23,21 @@ class PigForm extends React.Component {
     event.stopPropagation()
   }
 
+  formatDate = (value) => {
+    return `${value.getDate()}/${value.getMonth()}/${value.getFullYear()}`
+  }
+
   render() {
     const { handleSubmit, fields: { tagNumber, date, purchasedPrice, birthDate } } = this.props
     return (
       <form onSubmit={handleSubmit}>
         <div>
-          <DatePicker className={css.input} label="Ingreso" {...date} />
+          <DatePicker
+            autoOk
+            label="Ingreso"
+            inputFormat={this.formatDate}
+            {...date}
+          />
         </div>
         <div>
           <Input className={css.input} type="text" label="Caravana" {...tagNumber} />
@@ -37,7 +46,12 @@ class PigForm extends React.Component {
           <Input className={css.input} type="text" label="Precio" {...purchasedPrice} />
         </div>
         <div>
-          <DatePicker className={css.input} label="Fecha de Nacimiento" {...birthDate} />
+          <DatePicker
+            autoOk
+            label="Nacimiento"
+            inputFormat={this.formatDate}
+            {...birthDate}
+          />
         </div>
         <div>
           <Button
