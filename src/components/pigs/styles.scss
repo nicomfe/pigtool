@@ -27,19 +27,33 @@
   margin-top:0.1rem;
 }
 
+.content {
+  @media (min-width: $screen-xs-min ) {
+    display: flex;
+    justify-content: space-around;
+  }
+  span {
+    font-weight: lighter;
+  }
+}
+
 .showItemContent {
-  height: 50px;
+  composes: content;
+  height: 140px;
+  @media (min-width: $screen-xs-min ) {
+    height: 100px;
+  }
   transition: all 0.2s ease-in;
 }
 
 .hideItemContent {
+  composes: content;
   height: 0px;
   transition: all 0.2s ease-in;
 }
 
 .pigRow{
   overflow-y: hidden;
-  cursor: pointer;
   hr {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
@@ -47,8 +61,12 @@
 }
 
 .listItem {
+  cursor: pointer;
   div{
     background-color: transparent;
+  }
+  &:hover {
+    background-color: darken(white, 2);
   }
 }
 

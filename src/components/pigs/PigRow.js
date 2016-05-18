@@ -22,21 +22,35 @@ class PigRow extends React.Component {
   }
 
   render() {
-    const { tagNumber, date, precio } = this.props
+    const { tagNumber, birthDate, purchasedPrice, fatherTag, motherTag, boughtDate } = this.props
     const { showContent } = this.state
     return (
-      <div className={css.pigRow} onClick={this.handleItemClick}>
+      <div className={css.pigRow}>
         <ListItem
           avatar="/images/sow-icon.svg"
           caption={tagNumber}
           className={css.listItem}
+          onClick={this.handleItemClick}
         />
         <div className={showContent ? css.showItemContent : css.hideItemContent}>
-          <div>
-            Fecha: <NiceDate date={date} />
+          <div className={css.column}>
+            <div>
+              Fecha Nac.: <span><NiceDate date={birthDate} /></span>
+            </div>
+            <div>
+              Padre: <span>{fatherTag}</span>
+            </div>
+            <div>
+              Madre: <span>{motherTag}</span>
+            </div>
           </div>
-          <div>
-            Precio: {precio}
+          <div className={css.column}>
+            <div>
+              Compra: <span><NiceDate date={boughtDate} /></span>
+            </div>
+            <div>
+              Precio: <span>{purchasedPrice}</span>
+            </div>
           </div>
         </div>
         <ListDivider className={css.divider} />
@@ -47,8 +61,11 @@ class PigRow extends React.Component {
 
 PigRow.propTypes = {
   tagNumber: React.PropTypes.string,
-  date: React.PropTypes.string,
-  precio: React.PropTypes.string,
+  birthDate: React.PropTypes.string,
+  purchasedPrice: React.PropTypes.string,
+  fatherTag: React.PropTypes.string,
+  motherTag: React.PropTypes.string,
+  boughtDate: React.PropTypes.string,
 }
 
 export default PigRow

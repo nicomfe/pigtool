@@ -47,12 +47,13 @@ export function parsePig(json) {
   return {
     id: json.id,
     tagNumber: json.tag_number,
-    date: json.date,
+    boughtDate: json.bought_date,
     birthDate: json.birth_date,
-    origin: json.origin,
     purchasedPrice: json.purchased_price,
     mountingDates: json.mounting_dates,
     farrowings: json.farrowings,
+    fatherTag: json.father_tag,
+    motherTag: json.mother_tag,
   }
 }
 
@@ -60,9 +61,8 @@ export function parseToJson(pig) {
   return {
     id: pig.id,
     tag_number: pig.tagNumber,
-    date: pig.date,
+    bought_Date: pig.boughtDate,
     birth_date: pig.birthDate,
-    origin: pig.origin,
     purchased_price: pig.purchasedPrice,
     mounting_dates: pig.mountingDates,
     farrowings: pig.farrowings,

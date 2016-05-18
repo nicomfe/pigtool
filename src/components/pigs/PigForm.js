@@ -9,12 +9,14 @@ import css from './styles.scss'
 class PigForm extends React.Component {
 
   componentWillMount() {
-    const { tagNumber, date, initializeForm, purchasedPrice, birthDate } = this.props
+    const { tagNumber, boughtDate, initializeForm, purchasedPrice, birthDate, fatherTag, motherTag } = this.props
     initializeForm({
       tagNumber,
-      date: date && date !== '' ? date : new Date(),
+      boughtDate: boughtDate && boughtDate !== '' ? boughtDate : new Date(),
       purchasedPrice,
       birthDate: birthDate && birthDate !== '' ? birthDate : new Date(),
+      fatherTag,
+      motherTag,
     })
   }
 
@@ -28,22 +30,16 @@ class PigForm extends React.Component {
   }
 
   render() {
-    const { handleSubmit, fields: { tagNumber, date, purchasedPrice, birthDate } } = this.props
+    const { handleSubmit, fields: { tagNumber, boughtDate, purchasedPrice, birthDate, fatherTag, motherTag } } = this.props
     return (
       <form onSubmit={handleSubmit}>
         <div>
-          <DatePicker
-            autoOk
-            label="Ingreso"
-            inputFormat={this.formatDate}
-            {...date}
+          <Input
+            className={css.input}
+            type="text"
+            label="Caravana"
+            {...tagNumber}
           />
-        </div>
-        <div>
-          <Input className={css.input} type="text" label="Caravana" {...tagNumber} />
-        </div>
-        <div>
-          <Input className={css.input} type="text" label="Precio" {...purchasedPrice} />
         </div>
         <div>
           <DatePicker
@@ -52,6 +48,23 @@ class PigForm extends React.Component {
             inputFormat={this.formatDate}
             {...birthDate}
           />
+        </div>
+        <div>
+          <Input className={css.input} type="text" label="Padre" {...fatherTag} />
+        </div>
+        <div>
+          <Input className={css.input} type="text" label="Madre" {...motherTag} />
+        </div>
+        <div>
+          <DatePicker
+            autoOk
+            label="Ingreso"
+            inputFormat={this.formatDate}
+            {...boughtDate}
+          />
+        </div>
+        <div>
+          <Input className={css.input} type="text" label="Precio" {...purchasedPrice} />
         </div>
         <div>
           <Button
@@ -73,15 +86,17 @@ PigForm.propTypes = {
   fields: React.PropTypes.object.isRequired,
   handleSubmit: React.PropTypes.func.isRequired,
   tagNumber: React.PropTypes.string,
-  date: React.PropTypes.string,
+  boughtDate: React.PropTypes.string,
   initializeForm: React.PropTypes.func.isRequired,
   purchasedPrice: React.PropTypes.string,
   birthDate: React.PropTypes.date,
+  fatherTag: React.PropTypes.string,
+  motherTag: React.PropTypes.string,
 }
 
 PigForm = reduxForm({
   form: 'pig',
-  fields: ['date', 'tagNumber', 'purchasedPrice', 'birthDate'],
+  fields: ['boughtDate', 'tagNumber', 'purchasedPrice', 'birthDate', 'fatherTag', 'motherTag'],
   getFormState: (state, path) => state.get(path).toJS(),
 })(PigForm)
 

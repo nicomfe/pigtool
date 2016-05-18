@@ -1,11 +1,14 @@
 @import "./react-toolbox-theme";
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300);
 
 $screen-sm-min: 769px;
+$screen-xs-min: 569px;
 $color-disabled: #eee;
 $font-size-normal: 1.2rem;
 
 body {
   font-size: $font-size-normal;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 input {

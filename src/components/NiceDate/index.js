@@ -3,12 +3,11 @@ import Moment from 'moment'
 
 const NiceDate = (props) => {
   const { date, format } = props
-  const moment = new Moment(date)
+  const moment = date ? new Moment(date) : null
 
   const getFormattedDate = () => {
-    return moment.format(format)
+    return moment ? moment.format(format) : null
   }
-
   return <span>{getFormattedDate()}</span>
 }
 

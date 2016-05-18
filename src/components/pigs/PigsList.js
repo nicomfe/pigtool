@@ -17,8 +17,11 @@ class PigsList extends React.Component {
             <PigRow
               key={pig.get('id')}
               tagNumber={pig.get('tagNumber')}
-              date={pig.get('date')}
-              precio={pig.get('purchasedPrice')}
+              birthDate={pig.get('birthDate')}
+              boughtDate={pig.get('boughtDate')}
+              purchasedPrice={pig.get('purchasedPrice')}
+              fatherTag={pig.get('fatherTag')}
+              motherTag={pig.get('motherTag')}
             />
         )}
       </List>
