@@ -1,6 +1,6 @@
 import Immutable from 'immutable'
 import { createSelector } from 'reselect'
-
+import { toastr } from 'react-redux-toastr'
 import { fetchPigsFromApi, postSow } from '../api/pigs'
 
 export const FETCH_REQUEST = '@@pigs/FETCH_REQUEST'
@@ -45,6 +45,7 @@ export function createSow(sow) {
       .then((result) => {
         if (result.data && result.data.id) {
           copySow.id = result.data.id
+          toastr.info('Info', 'Agregado con éxito')
           dispatch(newSow(copySow))
         }
       })

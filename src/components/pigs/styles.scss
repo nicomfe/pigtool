@@ -29,8 +29,10 @@
 
 .content {
   @media (min-width: $screen-xs-min ) {
-    display: flex;
-    justify-content: space-around;
+    .container {
+      display: flex;
+      justify-content: space-around;
+    }
   }
   span {
     font-weight: lighter;
@@ -41,7 +43,7 @@
   composes: content;
   height: 140px;
   @media (min-width: $screen-xs-min ) {
-    height: 100px;
+    height: 140px;
   }
   transition: all 0.2s ease-in;
 }
@@ -78,4 +80,22 @@
 
 input, label, button {
   font-size: inherit !important;
+}
+
+.displayFlex{
+  @media (min-width: $screen-sm-min ) {
+    display: flex;
+    justify-content: space-between;
+    >div {
+      width: 100%;
+    }
+    div + div {
+      margin-left: 15px;
+    }
+  }
+}
+
+// put this in a general file
+.smallButton {
+  font-size: 16px !important;
 }

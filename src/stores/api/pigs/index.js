@@ -1,5 +1,5 @@
 export function fetchPigsFromApi() {
-  return fetch('http://private-8b65e-nicolas23.apiary-mock.com/sows')
+  return fetch('http://localhost:3001/api/sows')
     .then((result) => {
       return result.json()
     })
@@ -16,8 +16,11 @@ export function fetchPigsFromApi() {
 }
 
 export function postSow(sow) {
-  return fetch('http://private-8b65e-nicolas23.apiary-mock.com/sows', {
+  return fetch('http://localhost:3001/api/sows', {
     method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
     body: parseToJson(sow),
   })
   .then((result) => {
@@ -25,7 +28,7 @@ export function postSow(sow) {
   })
   .then((json) => {
     return {
-      data: parsePig(json),
+      data: parsePig(json.sow),
     }
   })
   .catch((e) => {
@@ -50,21 +53,18 @@ export function parsePig(json) {
     boughtDate: json.bought_date,
     birthDate: json.birth_date,
     purchasedPrice: json.purchased_price,
-    mountingDates: json.mounting_dates,
-    farrowings: json.farrowings,
     fatherTag: json.father_tag,
     motherTag: json.mother_tag,
   }
 }
 
 export function parseToJson(pig) {
-  return {
-    id: pig.id,
+  return JSON.stringify({
     tag_number: pig.tagNumber,
-    bought_Date: pig.boughtDate,
+    bought_date: pig.boughtDate,
     birth_date: pig.birthDate,
     purchased_price: pig.purchasedPrice,
-    mounting_dates: pig.mountingDates,
-    farrowings: pig.farrowings,
-  }
+    father_tag: pig.fatherTag,
+    mother_tag: pig.motherTag,
+  })
 }

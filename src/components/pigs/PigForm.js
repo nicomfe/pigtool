@@ -33,6 +33,7 @@ class PigForm extends React.Component {
     const { handleSubmit, fields: { tagNumber, boughtDate, purchasedPrice, birthDate, fatherTag, motherTag } } = this.props
     return (
       <form onSubmit={handleSubmit}>
+        <span>Agregar o editar un animal</span>
         <div>
           <Input
             className={css.input}
@@ -41,27 +42,23 @@ class PigForm extends React.Component {
             {...tagNumber}
           />
         </div>
-        <div>
+        <div className={css.displayFlex}>
           <DatePicker
             autoOk
             label="Nacimiento"
             inputFormat={this.formatDate}
             {...birthDate}
           />
-        </div>
-        <div>
-          <Input className={css.input} type="text" label="Padre" {...fatherTag} />
-        </div>
-        <div>
-          <Input className={css.input} type="text" label="Madre" {...motherTag} />
-        </div>
-        <div>
           <DatePicker
             autoOk
             label="Ingreso"
             inputFormat={this.formatDate}
             {...boughtDate}
           />
+        </div>
+        <div className={css.displayFlex}>
+          <Input className={css.input} type="text" label="Padre" {...fatherTag} />
+          <Input className={css.input} type="text" label="Madre" {...motherTag} />
         </div>
         <div>
           <Input className={css.input} type="text" label="Precio" {...purchasedPrice} />
@@ -86,10 +83,10 @@ PigForm.propTypes = {
   fields: React.PropTypes.object.isRequired,
   handleSubmit: React.PropTypes.func.isRequired,
   tagNumber: React.PropTypes.string,
-  boughtDate: React.PropTypes.string,
+  boughtDate: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number, React.PropTypes.instanceOf(Date)]),
   initializeForm: React.PropTypes.func.isRequired,
   purchasedPrice: React.PropTypes.string,
-  birthDate: React.PropTypes.date,
+  birthDate: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number, React.PropTypes.instanceOf(Date)]),
   fatherTag: React.PropTypes.string,
   motherTag: React.PropTypes.string,
 }
