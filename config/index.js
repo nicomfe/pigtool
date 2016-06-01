@@ -2,7 +2,7 @@ const path = require('path')
 const merge = require('lodash/merge')
 
 const NODE_ENV = process.env.NODE_ENV || 'development'
-const APP_DIR = 'src'
+const APP_DIR = 'app'
 const DIST_DIR = 'dist'
 const SERVER_DIR = 'server'
 const STATIC_DIR = 'static'

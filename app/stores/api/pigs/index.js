@@ -1,5 +1,5 @@
 export function fetchPigsFromApi() {
-  return fetch('http://localhost:3001/api/sows')
+  return fetch('/api/sows')
     .then((result) => {
       return result.json()
     })
@@ -16,7 +16,7 @@ export function fetchPigsFromApi() {
 }
 
 export function postSow(sow) {
-  return fetch('http://localhost:3001/api/sows', {
+  return fetch('/api/sows', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

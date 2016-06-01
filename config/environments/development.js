@@ -11,4 +11,7 @@ module.exports = {
       colors: true,
     },
   },
+  mongoose: {
+    uri: 'mongodb://localhost/pigtool',
+  },
 }

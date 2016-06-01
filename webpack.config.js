@@ -66,13 +66,13 @@ const webpackconfig = {
         test: /\.json$/,
         loader: 'json',
       },
-      // Any .scss file in ./src/... *except* those in ./src/styles/
+      // Any .scss file in ./app/... *except* those in ./app/styles/
       // are local css modules. the class names and ids will be changed to:
       // [name]-[local]-[hash:base64:5]
-      // include: /src\/(?!styles).+/,
+      // include: /app\/(?!styles).+/,
       {
         test: /(\.scss|\.css)$/,
-        exclude: /src\/styles/,
+        exclude: /app\/styles/,
         loaders: [
           'style',
           'css?modules&sourceMap&importLoaders=1&localIdentName=[name]-[local]-[hash:base64:5]',
@@ -81,11 +81,11 @@ const webpackconfig = {
           'toolbox',
         ],
       },
-      // Any .scss files in ./src/styles are treated as normal (not local)
+      // Any .scss files in ./app/styles are treated as normal (not local)
       // sass files, and so class names and ids will remain as specified
       {
         test: /(\.scss|\.css)$/,
-        include: /src\/styles/,
+        include: /app\/styles/,
         loader: 'style!css?sourceMap!postcss!sass',
       },
       // File loaders
@@ -124,7 +124,7 @@ const webpackconfig = {
   },
 
   toolbox: {
-    theme: './src/styles/react-toolbox-theme.scss',
+    theme: './app/styles/react-toolbox-theme.scss',
   },
 
 }

@@ -7,7 +7,7 @@ module.exports = {
   webpack: {
     devtool: 'source-map',
     output: {
-      publicPath: '/',
+      publicPath: '/build',
     },
   },
 
@@ -18,5 +18,8 @@ module.exports = {
       chunkModules: true,
       colors: true,
     },
+  },
+  mongoose: {
+    uri: 'mongodb://localhost/pigtool',
   },
 }
